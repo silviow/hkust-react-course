@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/MenuComponent';
 import './App.css';
@@ -19,7 +19,7 @@ class App extends Component {
             <div>
                 <Navbar dark color="primary">
                     <div className="container">
-                        <NavbarBrand href="/">Restaurant app</NavbarBrand>
+                        <NavbarBrand href="/">Restaurant</NavbarBrand>
                     </div>
                 </Navbar>
                 <Menu dishes={this.state.dishes} />
