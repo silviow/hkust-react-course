@@ -4,7 +4,6 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 class DishDetail extends Component {
 
     renderDish(dish) {
-
         if (dish != null) {
             return (
                 <div className="col-12 col-md-5 m-1">
@@ -22,25 +21,14 @@ class DishDetail extends Component {
                 <div></div>
             );
         }
-
-    }
-
-    date(data) {
-
-        let date = new Date(data);
-        let dateStr = date.toDateString();
-
-        return dateStr.slice(4, 10) + ', ' + dateStr.slice(11, 15);
-
     }
 
     renderComments(comments) {
-        
         const comment = comments.map((cmnt) => {
             return (
                 <li>
                     <p>"{cmnt.comment}"</p>
-                    <p>~ {cmnt.author}, {this.date(cmnt.date)}</p>
+                    <p>~ {cmnt.author}, {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(cmnt.date)))}</p>
                 </li>
             );
         });
@@ -57,18 +45,17 @@ class DishDetail extends Component {
                 <div></div>
             );
         }
-
     }
 
     render() {
-
         let dish = this.props.dish;
-
         if (dish != null) {
             return (
-                <div className="row">
-                    { this.renderDish(dish) }
-                    { this.renderComments(dish.comments) }
+                <div className="container">
+                    <div className="row">
+                        {this.renderDish(dish)}
+                        {this.renderComments(dish.comments)}
+                    </div>
                 </div>
             );
         } else {
@@ -76,9 +63,7 @@ class DishDetail extends Component {
                 <div></div>
             );
         }
-
     }
-
 }
 
 export default DishDetail;
