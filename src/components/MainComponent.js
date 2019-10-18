@@ -10,7 +10,6 @@ import { LEADERS } from '../storage/leaders';
 import { COMMENTS } from '../storage/comments';
 import { PROMOTIONS } from '../storage/promotions';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { comment } from 'postcss';
 
 class Main extends Component {
 
@@ -38,7 +37,7 @@ class Main extends Component {
         const DishWithId = ({match}) => {
             return (
                 <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId, 10))[0]}
-                    comments={this.state.comments.filter((comments) => comment.dishId) === parseInt(match.params.dishId, 10)}
+                    comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))}
                 />
             ); 
         }
