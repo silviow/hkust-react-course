@@ -16,7 +16,6 @@ class Contact extends Component {
             message: '',
             contactType: 'Phone',
         }
-<<<<<<< HEAD
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,8 +34,6 @@ class Contact extends Component {
     handleSubmit(event) {
         alert("Current state is: " + JSON.stringify(this.state));
         event.preventDefault();
-=======
->>>>>>> 6bd49905544f64d25d0a861316a9fdc0e2c759eb
     }
 
     render() {
@@ -82,37 +79,23 @@ class Contact extends Component {
                     <div className="col-12">
                         <h3>Send us your feedback</h3>
                     </div>
-<<<<<<< HEAD
                     <div className="col-12 col-md-9 mt-4">
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup row>
                                 <Label htmlFor="firstname" md={3}>First name</Label>
                                 <Col md={9}>
                                     <Input type="text" id="firstname" name="firstname" placeholder="First name" value={this.state.firstname} onChange={this.handleInputChange} />
-=======
-                    <div className="col-12 col-md-9">
-                        <Form>
-                            <FormGroup row>
-                                <Label htmlFor="firstname" md={3}>First name</Label>
-                                <Col md={9}>
-                                    <Input type="text" id="firstname" name="firstname" placeholder="First name" value={this.state.firstname} />
->>>>>>> 6bd49905544f64d25d0a861316a9fdc0e2c759eb
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor="lastname" md={3}>Last name</Label>
                                 <Col md={9}>
-<<<<<<< HEAD
                                     <Input type="text" id="lastname" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={this.handleInputChange} />
-=======
-                                    <Input type="text" id="lastname" name="lastname" placeholder="Last name" value={this.state.lastname} />
->>>>>>> 6bd49905544f64d25d0a861316a9fdc0e2c759eb
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor="phone" md={3}>Phone</Label>
                                 <Col md={9}>
-<<<<<<< HEAD
                                     <Input type="tel" id="phone" name="phone" placeholder="Phone number" value={this.state.phone} onChange={this.handleInputChange} />
                                 </Col>
                             </FormGroup>
@@ -147,9 +130,6 @@ class Contact extends Component {
                             <FormGroup row>
                                 <Col md={{size: 9, offset: 3}}>
                                     <Button type="submit" color="primary">Send feedback</Button>
-=======
-                                    <Input type="tel" id="phone" name="phone" placeholder="Phone number" value={this.state.phone} />
->>>>>>> 6bd49905544f64d25d0a861316a9fdc0e2c759eb
                                 </Col>
                             </FormGroup>
                         </Form>
