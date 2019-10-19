@@ -2,34 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 
+function RenderLeader({leader}) {
+    return (
+        <div key={leader.id} className="col-12 mt-2">
+            <Media tag="li">
+                <Media left middle>
+                    <Media object src={leader.image} alt={leader.name} />
+                </Media>
+                <Media body className="ml-4">
+                    <h4>{leader.name}</h4>
+                    <p>{leader.designation}</p>
+                    <p>{leader.description}</p>
+                </Media>
+            </Media>
+        </div>
+    );
+}
+
 function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <div key={leader.id} className="col-12 mt-2">
-                <Media tag="li">
-                    <Media left middle>
-                        <Media object src={leader.image} alt={leader.name} />
-                    </Media>
-                    <Media body className="ml-4">
-                        <h4>{leader.name}</h4>
-                        <p>{leader.designation}</p>
-                        <p>{leader.description}</p>
-                    </Media>
-                </Media>
-            </div>
+            <RenderLeader leader={leader} />
         );
     });
-
-    function RenderLeader() {
-        return (
-            <div className="col-12">
-                <Media list>
-                    {leaders}
-                </Media>
-            </div>
-        );
-    }
 
     return (
         <div className="container">
@@ -85,7 +81,11 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <RenderLeader />
+                <div className="col-12">
+                    <Media list>
+                        {leaders}
+                    </Media>
+                </div>
             </div>
         </div>
     );
