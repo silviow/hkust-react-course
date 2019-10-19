@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderDish({ dish }) {
+function RenderDish({dish}) {
     return (
         <div className="col-12 col-md-5 m-1">
             <Card>
