@@ -4,8 +4,8 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 
 function RenderLeader({leader}) {
     return (
-        <div key={leader.id} className="col-12 mt-2">
-            <Media tag="li">
+        <div className="col-12 mt-2">
+            <Media tag="li" key={leader.id}>
                 <Media left middle>
                     <Media object src={leader.image} alt={leader.name} />
                 </Media>
