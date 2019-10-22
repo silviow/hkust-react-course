@@ -4,7 +4,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../storage/baseUrl';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import { FadeTransform, Stagger, Fade } from 'react-animation-components';
 
 function RenderDish({ dish }) {
     return (
@@ -117,8 +117,8 @@ function RenderComments({comments, postComment, dishId}) {
                     <Stagger in>
                         {comments.map((comment) => {
                             return (
-                                <Fade in>
-                                    <li key={comment.id}>
+                                <Fade in key={comment.id}>
+                                    <li>
                                         <p>"{comment.comment}"</p>
                                         <p>~ {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
                                     </li>
